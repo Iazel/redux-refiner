@@ -149,8 +149,8 @@ const store = createStore(rootReducer, applyMiddleware(
 ```
 
 ### Impure action
-The last thing that you need to know is that `refinerMiddleware` listen for any **impure action**, i.e. an action with `meta.impure === true`.
-That means that you can easily create your own impure actions, but we ship with an handy impure action maker:
+The last thing that you need to know is that `refinerMiddleware` listen for any **impure action**, i.e. an action with `meta.impure === true`.  
+You can easily create your own impure actions, but we ship with an handy impure action maker:
 ```javascript
 import { impureAction } from 'redux-refiner';
 
