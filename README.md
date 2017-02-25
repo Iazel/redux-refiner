@@ -16,10 +16,10 @@ npm install --save redux-refiner
 * Separation of concerns
 * Easy to abstract patterns, the `refiner` is just a function
 * Easy to integrate with other libraries (eg: manage your async flow with Rx.js)
-* Impure actions are just action objects, hence loggable and can provide a good insight of what happens when
+* Impure actions are just action objects, hence loggable and provide a valuable insight
 * Easy to test, but require some effort depending on the side effect
-* Adapt to your coding style
-* Nearly the same logic of the reducer and not much to learn
+* Adapts to your coding style
+* Nearly the same logic as the reducer and not much to learn
 * Crazy small
 
 ## Why *refiner*?
@@ -88,8 +88,8 @@ function* counterSaga() {
 }
 ```
 
-Lets be honest and say that this feels cleaner than the `refiner` version, however the careful reader would have probably spotted the code repetition in both version.
-Suppose that we can't modify the actions nor the flow, how would you refactor the saga version? 
+Lets be honest and say that this feels cleaner than the `refiner` version, however the careful reader would have probably spotted the code repetition in both version.  
+Suppose that we can't modify the actions nor the flow, how would you refactor the saga version?  
 I don't know a clean way to do it (and if you do, please point me to the solution, thanks!), but refactoring the `refiner` is pretty easy:
 
 ```javascript
@@ -112,8 +112,9 @@ export function refiner(dispatch, action) {
 ```
 
 ### Higher order functions and abstraction
-Because the `refiner` is just a function, we can both test and compose it as we do with all the other piece of code, enabling a comfortable and powerful degree of abstraction.
-For example, suppose we have an higher order component `Pair` which render the same component twice. Suppose also that all actions from the child component will be wrapped in an action like:
+Because the `refiner` is just a function, we can both test and compose it as we do with all the other piece of code, enabling a comfortable and powerful degree of abstraction.  
+For example, suppose we have an higher order component `Pair` which render the same component twice.  
+Suppose also that all actions from the child component will be wrapped in an action like:
 ```javascript
 {
   type: PAIR_LEFT | PAIR_RIGHT
@@ -150,7 +151,7 @@ const store = createStore(rootReducer, applyMiddleware(
 ### Impure action
 The last thing that you need to know is that `refinerMiddleware` listen for any **impure action**, i.e. an action with `meta.impure === true`.
 That means that you can easily create your own impure actions, but we ship with an handy impure action maker:
-```
+```javascript
 import { impureAction } from 'redux-refiner';
 
 export const ASYNC_INCR = 'ASYNC_INCR';
