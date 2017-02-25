@@ -72,7 +72,7 @@ The structure is identical to a reducer, with the only difference that it also r
 
 ### Compare with saga & refactoring
 Follow a solution provided by [redux-saga](https://github.com/redux-saga/redux-saga/blob/master/examples/counter-vanilla/index.html):
-```
+```javascript
 function* incrementAsync() {
   yield effects.call(delay, 1000);
   yield effects.put({type: 'INCREMENT'});
