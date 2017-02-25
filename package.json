@@ -1,0 +1,24 @@
+{
+  "name": "redux-refiner",
+  "version": "1.0.0",
+  "description": "Middleware to manage actions that require some side effects, eg: an api call",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iazel/redux-refiner.git"
+  },
+  "keywords": [
+    "redux",
+    "middleware",
+    "side-effects"
+  ],
+  "author": "pelligra.s@gmail.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Iazel/redux-refiner/issues"
+  },
+  "homepage": "https://github.com/Iazel/redux-refiner#readme"
+}
